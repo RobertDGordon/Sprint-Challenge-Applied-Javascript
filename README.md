@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM is an API, representing each HTML element as an object we can manipulate.
+
 2. What is an event?
+
+An event is trigger set by an interaction with a user on the page.
 
 3. What is an event listener?
 
+An event listener watches for specific triggers to happen and then runs code.
+
 4. Why would we convert a NodeList into an Array?
 
+Converting a NodeList into an array allows us to manipulate the data with Javascript.
+
 5. What is a component?
+
+A component builds elements that are repeatable, through reusable code.
 
 ### Git Set up
 
