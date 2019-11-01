@@ -27,15 +27,16 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             response.data.articles[key].forEach(item => {
                 // console.log (key, item)
                 // console.log (item.authorPhoto)
-                cardLocation.append(createCard(item));
+                cardLocation.append(createCard(key, item));
             });
         }
     })
 
-function createCard(obj){
+function createCard(key, obj){
     const card = document.createElement('div');
 
     card.classList.add('card');
+    card.setAttribute('data-type', `${key}`)
     card.innerHTML =`
         <div class="headline">${obj.headline}</div>
             <div class="author">

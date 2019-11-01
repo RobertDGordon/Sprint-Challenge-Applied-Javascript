@@ -44,11 +44,30 @@ function createCarousel (){
 
   carousel.style.zIndex = 0;
 
-  currentImg.src = imgs[3];
-  currentImg.style.display = 'inherit'
-  currentImg.style.transition = 'all 0.6s'
+  currentImg.src = imgs[0];
+  currentImg.style.display = 'inherit';
+  // currentImg.style.transition = 'all 0.6s';
+  currentImg.style.webkitAnimationName = 'fade';
+  currentImg.style.webkitAnimationDuration = '1.5s';
+  currentImg.style.animationName = 'fade';
+  currentImg.style.animationDuration = '1.5s';
+  
+  let style = document.createElement('style');
+  style.type = 'text/css';
+  let keyFrames = `
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  `
+  style.innerHTML = keyFrames.replace();
 
-  let imgCounter = 3;
+  let imgCounter = 0;
 
   leftBtn.addEventListener('click', ()=>{
     if (imgCounter === 0){
@@ -56,7 +75,7 @@ function createCarousel (){
     }else {
       imgCounter--;
     }
-    console.log (imgCounter);
+    // console.log (imgCounter);
     currentImg.src = imgs[imgCounter];
   })
 
@@ -66,7 +85,7 @@ function createCarousel (){
     }else {
       imgCounter++;
     }
-    console.log (imgCounter);
+    // console.log (imgCounter);
     currentImg.src = imgs[imgCounter];
   })
 

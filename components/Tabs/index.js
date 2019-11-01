@@ -25,5 +25,20 @@ function createTab(topic){
     tab.classList.add('tab');
     tab.textContent = topic;
 
+    tab.addEventListener('click', ()=>{
+        const cardType = document.querySelectorAll('.card');
+        // console.log (cardType, topic);
+        if (topic === 'node.js'){
+            topic = 'node';
+        }
+        for (let i = 0; i < cardType.length; i++){
+            if (cardType[i].dataset.type === topic){
+                cardType[i].style.display = 'inherit';
+            }else{
+                cardType[i].style.display = 'none';
+            }
+        }
+    })
+
     return tab;
 }
